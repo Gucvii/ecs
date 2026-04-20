@@ -44,13 +44,6 @@ jobs:
       #   run: |
       #     apk add --no-cache upx
       
-      - name: Configure Git for Private Modules
-        run: |
-          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
-          git config --global url."git@github.com:".insteadOf "https://github.com/"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Clean Go cache before build
         run: |
           go clean -cache -modcache -testcache
@@ -65,7 +58,6 @@ jobs:
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOPRIVATE: github.com/oneclickvirt/security,github.com/oneclickvirt/privatespeedtest
 
       - name: Update goecs.sh with new version
         run: |

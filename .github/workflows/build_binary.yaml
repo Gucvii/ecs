@@ -46,10 +46,10 @@ jobs:
       
       - name: Configure Git for Private Modules
         run: |
-          git config --global url."https://${{ secrets.GHT }}@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
           git config --global url."git@github.com:".insteadOf "https://github.com/"
         env:
-          GITHUB_TOKEN: ${{ secrets.GHT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean Go cache before build
         run: |
@@ -64,7 +64,7 @@ jobs:
           version: '~> v2'
           args: release --clean
         env:
-          GITHUB_TOKEN: ${{ secrets.GHT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOPRIVATE: github.com/oneclickvirt/security,github.com/oneclickvirt/privatespeedtest
 
       - name: Update goecs.sh with new version
@@ -96,4 +96,4 @@ jobs:
           git commit -m "chore: update ECS_VERSION to $VERSION in goecs.sh"
           git push origin $BRANCH
         env:
-          GITHUB_TOKEN: ${{ secrets.GHT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

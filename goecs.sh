@@ -2,7 +2,7 @@
 # From https://github.com/oneclickvirt/ecs
 # 2025.10.08
 
-# curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+# curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
 
 cat <<"EOF"
   ,ad8888ba,     ,ad8888ba,    88888888888  ,ad8888ba,   ad88888ba

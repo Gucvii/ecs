@@ -79,19 +79,19 @@ Shell 版本：[https://github.com/spiritLHLS/ecs](https://github.com/spiritLHLS
 - **国际用户无加速：**
 
   ```bash
-  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
   ```
 
 - **国际/国内使用 CDN 加速：**
 
   ```bash
-  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
   ```
 
 - **国内用户使用 CNB 加速：**
 
   ```bash
-  export noninteractive=true && export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
+  export noninteractive=true && export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
   ```
 
 - **短链接：**
@@ -120,19 +120,19 @@ Shell 版本：[https://github.com/spiritLHLS/ecs](https://github.com/spiritLHLS
    **国际用户无加速：**
 
    ```bash
-   curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
    **国际/国内使用 CDN 加速：**
 
    ```bash
-   curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
    **国内用户使用 CNB 加速：**
 
    ```bash
-   export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
 2. **更新包管理器（可选择）并安装环境**

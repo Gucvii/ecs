@@ -79,31 +79,31 @@ Shell version: [https://github.com/spiritLHLS/ecs/blob/main/README_EN.md](https:
 - **International users without acceleration:**
 
   ```bash
-  export noninteractive=true && curl -L https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
   ```
 
 - **International/domestic users with CDN acceleration:**
 
   ```bash
-  export noninteractive=true && curl -L https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
   ```
 
 - **Domestic users with CNB acceleration:**
 
   ```bash
-  export noninteractive=true && export CN=true && curl -L https://cnb.cool/oneclickvirt/ecs/-/git/raw/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
+  export noninteractive=true && export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
   ```
 
 - **Short Link:**
 
   ```bash
-  export noninteractive=true && curl -L https://bash.spiritlhl.net/goecs -o goecs.sh && chmod +x goecs.sh && bash goecs.sh install && goecs -l=en
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
   ```
   
   OR
 
   ```bash
-  export noninteractive=true && curl -L https://ba.sh/JrVa -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs -l=en
   ```
 
 **For more accurate testing, please follow the detailed instructions below to install and add non-essential dependencies**
@@ -120,19 +120,19 @@ The following commands control whether dependencies are installed, whether the p
    **International users without acceleration:**
 
    ```bash
-   curl -L https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
    **International/domestic users with CDN acceleration:**
 
    ```bash
-   curl -L https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
    **Domestic users with CNB acceleration:**
 
    ```bash
-   export CN=true && curl -L https://cnb.cool/oneclickvirt/ecs/-/git/raw/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
 2. **Update package manager (optional) and install environment**
@@ -297,20 +297,20 @@ docker run --rm spiritlhl/goecs:latest -menu=false -l=en
 
 Using Docker to execute tests will result in some hardware testing bias and virtualization architecture detection failure. Direct testing is recommended over Docker testing.
 
-Mirror image: https://cnb.cool/oneclickvirt/ecs/-/packages/docker/ecs
+Mirror image: https://cnb.cool/Gucvii/ecs/-/packages/docker/ecs
 
 Please ensure Docker is installed on your machine before executing the following commands
 
 Privileged mode + host network
 
 ```shell
-docker run --rm --privileged --network host docker.cnb.cool/oneclickvirt/ecs:latest -menu=false -l=en
+docker run --rm --privileged --network host your-dockerhub-user/goecs:latest -menu=false -l=en
 ```
 
 Unprivileged mode + non-host network
 
 ```shell
-docker run --rm docker.cnb.cool/oneclickvirt/ecs:latest -menu=false -l=en
+docker run --rm your-dockerhub-user/goecs:latest -menu=false -l=en
 ```
 
 </details>

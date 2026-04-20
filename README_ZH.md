@@ -79,19 +79,19 @@ Shell 版本：[https://github.com/spiritLHLS/ecs](https://github.com/spiritLHLS
 - **国际用户无加速：**
 
   ```bash
-  export noninteractive=true && curl -L https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
   ```
 
 - **国际/国内使用 CDN 加速：**
 
   ```bash
-  export noninteractive=true && curl -L https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
+  export noninteractive=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
   ```
 
 - **国内用户使用 CNB 加速：**
 
   ```bash
-  export noninteractive=true && export CN=true && curl -L https://cnb.cool/oneclickvirt/ecs/-/git/raw/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
+  export noninteractive=true && export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh && ./goecs.sh install && goecs
   ```
 
 - **短链接：**
@@ -120,19 +120,19 @@ Shell 版本：[https://github.com/spiritLHLS/ecs](https://github.com/spiritLHLS
    **国际用户无加速：**
 
    ```bash
-   curl -L https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
    **国际/国内使用 CDN 加速：**
 
    ```bash
-   curl -L https://cdn.spiritlhl.net/https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
    **国内用户使用 CNB 加速：**
 
    ```bash
-   export CN=true && curl -L https://cnb.cool/oneclickvirt/ecs/-/git/raw/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+   export CN=true && curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
    ```
 
 2. **更新包管理器（可选择）并安装环境**
@@ -305,16 +305,16 @@ docker run --rm spiritlhl/goecs:latest -menu=false -l zh
 特权模式+host网络
 
 ```shell
-docker run --rm --privileged --network host crpi-8tmognxgyb86bm61.cn-guangzhou.personal.cr.aliyuncs.com/oneclickvirt/ecs:latest -menu=false -l zh
+docker run --rm --privileged --network host your-dockerhub-user/goecs:latest -menu=false -l zh
 ```
 
 非特权模式+非host网络
 
 ```shell
-docker run --rm crpi-8tmognxgyb86bm61.cn-guangzhou.personal.cr.aliyuncs.com/oneclickvirt/ecs:latest -menu=false -l zh
+docker run --rm your-dockerhub-user/goecs:latest -menu=false -l zh
 ```
 
-实际上还有CNB镜像地址 https://cnb.cool/oneclickvirt/ecs/-/packages/docker/ecs 但很可惜组织空间不足无法推送了，更推荐使用阿里云镜像加速
+实际上还有CNB镜像地址 https://cnb.cool/Gucvii/ecs/-/packages/docker/ecs 但很可惜组织空间不足无法推送了，更推荐使用阿里云镜像加速
 
 </details>
 

@@ -37,19 +37,16 @@ var (
 )
 
 const (
-	cpuStatsPrimaryURL    = "https://raw.githubusercontent.com/oneclickvirt/ecs/ranks/cpu_statistics.json"
-	cpuStatsFallbackURL   = "https://github.com/oneclickvirt/ecs/raw/refs/heads/ranks/cpu_statistics.json"
-	cpuCDNProbeTestURL    = "https://raw.githubusercontent.com/spiritLHLS/ecs/main/back/test"
+	cpuStatsPrimaryURL    = "https://raw.githubusercontent.com/Gucvii/ecs/ranks/cpu_statistics.json"
+	cpuStatsFallbackURL   = "https://github.com/Gucvii/ecs/raw/refs/heads/ranks/cpu_statistics.json"
+	cpuCDNProbeTestURL    = "https://raw.githubusercontent.com/Gucvii/ecs/main/back/test"
 	cpuStatsCacheTTL      = 30 * time.Minute
 	cpuStatsFailCacheTTL  = 5 * time.Minute
 	cpuStatsRequestTimout = 6 * time.Second
 )
 
 var cpuStatsCDNList = []string{
-	"https://cdn.spiritlhl.net/",
-	"http://cdn3.spiritlhl.net/",
-	"http://cdn1.spiritlhl.net/",
-	"http://cdn2.spiritlhl.net/",
+	"https://raw.githubusercontent.com/Gucvii/ecs/main/",
 }
 
 type cpuStatsEntry struct {

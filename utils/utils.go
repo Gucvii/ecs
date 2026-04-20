@@ -23,7 +23,6 @@ import (
 	"github.com/oneclickvirt/basics/system"
 	butils "github.com/oneclickvirt/basics/utils"
 	. "github.com/oneclickvirt/defaultset"
-	"github.com/oneclickvirt/security/network"
 )
 
 // IsAndroid 检测当前是否在 Android (Termux) 环境下运行
@@ -347,69 +346,13 @@ func PrintAndCapture(f func(), tempOutput, output string) string {
 }
 
 // UploadText 上传文本内容到指定URL
+// Modified: upload functionality disabled - returns empty strings
 func UploadText(absPath string) (string, string, error) {
-	primaryURL := "http://hpaste.spiritlhl.net/api/UL/upload"
-	backupURL := "https://paste.spiritlhl.net/api/UL/upload"
-	token := network.SecurityUploadToken
-	client := req.C().SetTimeout(6 * time.Second)
-	client.R().
-		SetRetryCount(2).
-		SetRetryBackoffInterval(1*time.Second, 5*time.Second).
-		SetRetryFixedInterval(2 * time.Second)
-	// 打开文件
-	file, err := os.Open(absPath)
-	if err != nil {
-		return "", "", fmt.Errorf("failed to open file: %w", err)
-	}
-	defer file.Close()
-	// 获取文件信息并检查大小
-	fileInfo, err := file.Stat()
-	if err != nil {
-		return "", "", fmt.Errorf("failed to get file info: %w", err)
-	}
-	if fileInfo.Size() > 25*1024 { // 25KB
-		return "", "", fmt.Errorf("file size exceeds 25KB limit")
-	}
-	// 上传逻辑
-	upload := func(url string) (string, string, error) {
-		file, err := os.Open(absPath)
-		if err != nil {
-			return "", "", fmt.Errorf("failed to re-open file for %s: %w", url, err)
-		}
-		defer file.Close()
-		content, err := io.ReadAll(file)
-		if err != nil {
-			return "", "", fmt.Errorf("failed to read file content for %s: %w", url, err)
-		}
-		resp, err := client.R().
-			SetHeader("Authorization", token).
-			SetFileBytes("file", filepath.Base(absPath), content).
-			Post(url)
-		if err != nil {
-			return "", "", fmt.Errorf("failed to make request to %s: %w", url, err)
-		}
-		if resp.StatusCode >= 200 && resp.StatusCode <= 299 && resp.String() != "" {
-			fileID := strings.TrimSpace(resp.String())
-			if strings.Contains(fileID, "show") {
-				fileID = fileID[strings.LastIndex(fileID, "/")+1:]
-			}
-			httpURL := fmt.Sprintf("http://hpaste.spiritlhl.net/#/show/%s", fileID)
-			httpsURL := fmt.Sprintf("https://paste.spiritlhl.net/#/show/%s", fileID)
-			return httpURL, httpsURL, nil
-		}
-		return "", "", fmt.Errorf("upload failed for %s with status code: %d", url, resp.StatusCode)
-	}
-	// 尝试上传到主URL
-	httpURL, httpsURL, err := upload(primaryURL)
-	if err == nil {
-		return httpURL, httpsURL, nil
-	}
-	// 尝试上传到备份URL
-	httpURL, httpsURL, err = upload(backupURL)
-	if err != nil {
-		return "", "", fmt.Errorf("failed to upload to both primary and backup URLs: %w", err)
-	}
-	return httpURL, httpsURL, nil
+	// Upload functionality has been disabled in this fork
+	// Original upload targets were:
+	//   primaryURL := "http://hpaste.spiritlhl.net/api/UL/upload"
+	//   backupURL := "https://paste.spiritlhl.net/api/UL/upload"
+	return "", "", nil
 }
 
 // ProcessAndUpload 创建结果文件并上传文件
@@ -660,19 +603,9 @@ result:
 }
 
 // 获取每日/总的程序执行统计信息
+// Disabled in this fork - returns nil to avoid external network calls
 func GetGoescStats() (*StatsResponse, error) {
-	client := req.C().SetTimeout(5 * time.Second)
-	var stats StatsResponse
-	resp, err := client.R().
-		SetSuccessResult(&stats).
-		Get("https://hits.spiritlhl.net/goecs")
-	if err != nil {
-		return nil, err
-	}
-	if !resp.IsSuccessState() {
-		return nil, fmt.Errorf("unexpected status code: %d", resp.StatusCode)
-	}
-	return &stats, nil
+	return nil, nil
 }
 
 // 统计结果单位转换
@@ -688,10 +621,7 @@ func FormatGoecsNumber(num int) string {
 // 通过Github的API检索仓库最新TAG的版本
 func GetLatestEcsRelease() (*GitHubRelease, error) {
 	urls := []string{
-		"https://api.github.com/repos/oneclickvirt/ecs/releases/latest",
-		"https://fd.spiritlhl.top/https://api.github.com/repos/oneclickvirt/ecs/releases/latest",
-		"https://githubapi.spiritlhl.top/repos/oneclickvirt/ecs/releases/latest",
-		"https://githubapi.spiritlhl.workers.dev/repos/oneclickvirt/ecs/releases/latest",
+		"https://api.github.com/repos/Gucvii/ecs/releases/latest",
 	}
 	client := req.C().SetTimeout(3 * time.Second)
 	for _, url := range urls {

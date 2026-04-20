@@ -2,9 +2,7 @@
 # From https://github.com/oneclickvirt/ecs
 # 2025.10.08
 
-# curl -L https://raw.githubusercontent.com/oneclickvirt/ecs/master/goecs.sh -o goecs.sh && chmod +x goecs.sh
-# 或
-# curl -L https://cnb.cool/oneclickvirt/ecs/-/git/raw/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
+# curl -L https://raw.githubusercontent.com/Gucvii/ecs/main/goecs.sh -o goecs.sh && chmod +x goecs.sh
 
 cat <<"EOF"
   ,ad8888ba,     ,ad8888ba,    88888888888  ,ad8888ba,   ad88888ba
@@ -154,9 +152,7 @@ goecs_check() {
     check_china
     ECS_VERSION="0.1.122"
     for api in \
-        "https://api.github.com/repos/oneclickvirt/ecs/releases/latest" \
-        "https://githubapi.spiritlhl.workers.dev/repos/oneclickvirt/ecs/releases/latest" \
-        "https://githubapi.spiritlhl.top/repos/oneclickvirt/ecs/releases/latest"; do
+        "https://api.github.com/repos/Gucvii/ecs/releases/latest"; do
         ECS_VERSION=$(curl -m 6 -sSL "$api" | awk -F \" '/tag_name/{gsub(/^v/,"",$4); print $4}')
         if [ -n "$ECS_VERSION" ]; then
             break
@@ -193,14 +189,14 @@ goecs_check() {
     sleep 5
     if [ "$CN" = "true" ]; then
         _yellow "Using China mirror for download..."
-        base_url="https://cnb.cool/oneclickvirt/ecs/-/git/raw/main"
+        base_url="https://raw.githubusercontent.com/Gucvii/ecs/main"
     else
-        cdn_urls="https://cdn0.spiritlhl.top/ http://cdn3.spiritlhl.net/ http://cdn1.spiritlhl.net/ http://cdn2.spiritlhl.net/"
+        cdn_urls="https://raw.githubusercontent.com/Gucvii/ecs/main/"
         check_cdn_file
         if [ -n "$cdn_success_url" ]; then
-            base_url="${cdn_success_url}https://github.com/oneclickvirt/ecs/releases/download/v${ECS_VERSION}"
+            base_url="${cdn_success_url}https://github.com/Gucvii/ecs/releases/download/v${ECS_VERSION}"
         else
-            base_url="https://github.com/oneclickvirt/ecs/releases/download/v${ECS_VERSION}"
+            base_url="https://github.com/Gucvii/ecs/releases/download/v${ECS_VERSION}"
         fi
     fi
     local zip_file=""
@@ -546,7 +542,7 @@ env_check() {
     _green "System information: $SYSTEM"
     _green "Update command: $UPDATE_CMD"
     _green "Install command: $INSTALL_CMD"
-    cdn_urls="https://cdn0.spiritlhl.top/ http://cdn3.spiritlhl.net/ http://cdn1.spiritlhl.net/ http://cdn2.spiritlhl.net/"
+    cdn_urls="https://raw.githubusercontent.com/Gucvii/ecs/main/"
     check_cdn_file
     _yellow "Warning: System update will be performed"
     _yellow "This operation may:"

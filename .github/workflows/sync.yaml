@@ -50,7 +50,7 @@ jobs:
           git add .
           git commit -m "Sync release ${{ env.RELEASE_TAG }} from ${{ github.repository }}"
           git branch -M main
-          git remote add target https://cnb.cool/oneclickvirt/ecs.git
+          git remote add target https://cnb.cool/Gucvii/ecs.git
           echo "machine cnb.cool login ${{ secrets.CNB_USERNAME }} password ${{ secrets.CNB_TOKEN }}" > ~/.netrc
           chmod 600 ~/.netrc
           git push -f target main

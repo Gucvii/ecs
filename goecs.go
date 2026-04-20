@@ -67,7 +67,8 @@ func main() {
 	preCheck := utils.CheckPublicAccess(3 * time.Second)
 	go func() {
 		if preCheck.Connected {
-			http.Get("https://hits.spiritlhl.net/goecs.svg?action=hit&title=Hits&title_bg=%23555555&count_bg=%230eecf8&edge_flat=false")
+			// Hits counter disabled in this fork
+			// http.Get("https://hits.spiritlhl.net/goecs.svg?action=hit&title=Hits&title_bg=%23555555&count_bg=%230eecf8&edge_flat=false")
 		}
 	}()
 	if configs.MenuMode {

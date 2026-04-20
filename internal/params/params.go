@@ -85,7 +85,7 @@ func NewConfig(version string) *Config {
 		WebTestStatus:        false,
 		AutoChangeDiskMethod: true,
 		FilePath:             "goecs.txt",
-		EnableUpload:         true,
+		EnableUpload:         false,
 		AnalyzeResult:        false,
 		OnlyIpInfoCheck:      false,
 		Help:                 false,

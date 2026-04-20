@@ -242,7 +242,7 @@ func BasicsAndSecurityCheck(language, nt3CheckType string, securityCheckStatus b
 	wgt.Add(1)
 	go func() {
 		defer wgt.Done()
-		ipv4, ipv6, ipInfo, securityInfo, _ = network.NetworkCheck("both", securityCheckStatus, language)
+		ipv4, ipv6, ipInfo, securityInfo, _ = bnetwork.NetworkCheck("both", securityCheckStatus, language)
 		// if err != nil {
 		// 	fmt.Println(err.Error())
 		// }

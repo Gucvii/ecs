@@ -603,9 +603,9 @@ result:
 }
 
 // 获取每日/总的程序执行统计信息
-// Disabled in this fork - returns nil to avoid external network calls
+// Disabled in this fork - returns error to avoid external network calls
 func GetGoescStats() (*StatsResponse, error) {
-	return nil, nil
+	return nil, fmt.Errorf("stats disabled in this fork")
 }
 
 // 统计结果单位转换

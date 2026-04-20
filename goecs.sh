@@ -150,7 +150,7 @@ goecs_check() {
     os=$(uname -s 2>/dev/null || echo "Unknown")
     arch=$(uname -m 2>/dev/null || echo "Unknown")
     check_china
-    ECS_VERSION="0.1.122"
+    ECS_VERSION="0.1.123-test"
     for api in \
         "https://api.github.com/repos/Gucvii/ecs/releases/latest"; do
         ECS_VERSION=$(curl -m 6 -sSL "$api" | awk -F \" '/tag_name/{gsub(/^v/,"",$4); print $4}')
@@ -160,8 +160,8 @@ goecs_check() {
         sleep 1
     done
     if [ -z "$ECS_VERSION" ]; then
-        _yellow "Unable to get version info, using default version 0.1.122"
-        ECS_VERSION="0.1.122"
+        _yellow "Unable to get version info, using default version 0.1.123-test"
+        ECS_VERSION="0.1.123-test"
     fi
     version_output=""
     for cmd_path in "goecs" "./goecs" "/usr/bin/goecs" "/usr/local/bin/goecs"; do
